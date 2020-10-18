@@ -24,9 +24,20 @@ public class Lambdas2 {
     };
 
     @Test
-    public void print() {
+    public void print1() {
         lambda1.method(2, 3, "Кількість баскетболістів");
-        lambda2.method(2, 3, "кількість баскетболістів");
+        lambda2.method(2, 3, "Кількість футболістів");
     }
+
+    /**Метод, який приймає реалізацію інтерфейсу, як параметр**/
+    public static void methodTakesLambda(Inmyface imf) {
+        imf.method(25,118,"Кількість хокеїстів");
+    }
+    @Test
+    public void print2() {
+        /**Викликаєм цей метод і раельізовуєм інтерфейс на льоту**/
+        Lambdas2.methodTakesLambda((int a, int b, String str)-> {System.out.println(str+" - "+ b/a);return 0;});
+    }
+
 
 }

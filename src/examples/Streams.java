@@ -6,7 +6,7 @@ import java.util.*;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class StreamsExample {
+public class Streams {
     @Test
     public void test()  {
         /*Stream з ліста стрінгів*/

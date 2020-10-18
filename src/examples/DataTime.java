@@ -14,7 +14,7 @@ import java.util.*;
 import static java.time.LocalDateTime.*;
 
 
-public class DataTimeExamples {
+public class DataTime {
 
     @Test
     public void test() {

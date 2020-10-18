@@ -2,7 +2,7 @@ package examples;
 
 import org.junit.Test;
 
-public class BuilderExample {
+public class Builder {
     @Test
     public void test() {
         Car car1 = new Car.CarBuilder().buildName("Alaba").buildSpeed(234).buildTransmission(Trasmission.COSMIC).build();

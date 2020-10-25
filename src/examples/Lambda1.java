@@ -78,12 +78,12 @@ class Lambda12 {
     /**
      * Створюєм різні імплементації через різні лямбди
      **/
-    Inmyface lambda3 = (int a, int b, String str) -> {
+    Inmyface lambda3 = (a, b, str) -> {
         System.out.println(str + " " + (a + b));
         return a + b;
     };
 
-    Inmyface lambda4 = (int a, int b, String str) -> {
+    Inmyface lambda4 = (a, b, str) -> {
         System.out.println(a * b + " - " + str);
         return a / b;
     };

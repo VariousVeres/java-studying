@@ -64,8 +64,8 @@ class Lambda22 {
     public void print2() {
 
         /**А вже тут ми на льоту реалізовуєм цей метод, і можем кожен раз змінювати умову**/
-        Lambda22.sumOfPairInArray(arr, (int a) -> a % 2 == 0);
-        Lambda22.sumOfPairInArray(arr, (int a) -> a % 2 == 1);
+        Lambda22.sumOfPairInArray(arr, (a) -> a % 2 == 0);
+        Lambda22.sumOfPairInArray(arr, (a) -> a % 2 == 1);
     }
 
 }

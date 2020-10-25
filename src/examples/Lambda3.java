@@ -42,13 +42,13 @@ public class Lambda3 {
         Lambda3.method1(HelpClass::summ);
         Lambda3.method2(HelpClass::concat);
         /**Або стабільно юзати лямбду**/
-        Inhisfaced ifh = (int a, int b, String str) -> System.out.println(a + b + " " + str);
-        Inherfaced iheh = (String str1, String str2) -> System.out.println(str1+" 777 "+str2);
+        Inhisfaced ifh = (a, b, str) -> System.out.println(a + b + " " + str);
+        Inherfaced iheh = (str1, str2) -> System.out.println(str1 + " 777 " + str2);
         Lambda3.method1(ifh);
         Lambda3.method2(iheh);
         /**Або підставляти лямбду на льоту**/
-        Lambda3.method1((int a, int b, String str) -> System.out.println("666"));
-        Lambda3.method2((String str1, String str2) -> System.out.println("888"));
+        Lambda3.method1((a, b, str) -> System.out.println("666"));
+        Lambda3.method2((Sstr1, str2) -> System.out.println("888"));
 
     }
 }

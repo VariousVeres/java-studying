@@ -1,42 +1,42 @@
 package training;
+
+import java.util.function.Predicate;
+
 import org.junit.Test;
 
 
-interface Inter {
-    boolean method(int a);
-}
-
-class ExpressionHelper {
-    static boolean isPair(int j) {
-        return j % 2 == 0;
-    }
-
-    static boolean isUnPair(int j) {
-        return j % 2 == 1;
-    }
-}
+/**ДЖЕНЕРІКИ**/
+/** ЗАСТОСУВАННЯ Ф-ЦІОНАЛЬНИХ ІНТЕРФЕЙСІВ**/
 
 
 public class Run {
+    @Test
+    public void main() {
+        Predicate<Integer> p = (a) -> (a % 2) == 0;
+        Pituh.summOfArrayElements(new int[]{3, 4, 5, 6,34}, (a) -> (Integer) a % 2 == 0);
 
-    //    Inter lambda = (int a) -> a % 2 == 0;
-    int[] arr = new int[]{2, 3, 4, 56, 23, 8, 7, 11, 12, 35};
+        Generic<Integer> gem = new Generic<>();
+        gem.method(34);
+    }
+}
 
-    int sumOf(int[] arr, Inter itn) {
-        int counter = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (itn.method(arr[i])) {
-                counter += arr[i];
+class Pituh {
+    public static int summOfArrayElements(int[] arr, Predicate p) {
+        int result = 0;
+        for (int elem : arr) {
+            if (p.test(elem)) {
+                result += elem;
             }
         }
-        return counter;
+        System.out.println(result);
+        return result;
     }
-
-
-    @Test
-    public void test1() {
-        System.out.println(sumOf(arr, ExpressionHelper::isPair));
-        System.out.println(sumOf(arr, ExpressionHelper::isUnPair));
-    }
-
 }
+
+
+class Generic <T> {
+    public void method(T t)  {
+        System.out.println(t);
+    }
+}
+

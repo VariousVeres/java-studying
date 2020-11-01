@@ -16,14 +16,12 @@ interface Inherfaced {
 
 //Є клас з методом, з такими самим вхід вихід як в методі інтерфейсу, він підходить для його реалізації
 class HelpClass {
-    static int summ(int a, int b, String str) {
+    static void summ(int a, int b, String str) {
         System.out.println(a + b + " " + str);
-        return 25;
     }
 
-    static String concat(String str1, String str2) {
+    static void concat(String str1, String str2) {
         System.out.println(str1 + " " + str2);
-        return str1 + " " + str2;
     }
 }
 

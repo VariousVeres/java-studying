@@ -56,7 +56,7 @@ class Generic4<T extends Collection> {
     }
 }
 
-public class Generics {
+public class Generics1 {
     @Test
     public void main() {
         // 1)Створюєм інстанс класу, при цьому визначаємо тип, який буде юзатись

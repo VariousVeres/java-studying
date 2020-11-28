@@ -25,7 +25,7 @@ class HelpClass {
     }
 }
 
-public class Lambda3 {
+public class Lambdas3 {
     static void method1(Inhisfaced ihf) {
         ihf.method(2, 3, "asdasd");
     }
@@ -37,16 +37,16 @@ public class Lambda3 {
     @Test
     public void print() {
         /**Замість лямбди можем юзати метод, який в нас є в окремому класі і який повертає і приймає ті ж типи**/
-        Lambda3.method1(HelpClass::summ);
-        Lambda3.method2(HelpClass::concat);
+        Lambdas3.method1(HelpClass::summ);
+        Lambdas3.method2(HelpClass::concat);
         /**Або стабільно юзати лямбду**/
         Inhisfaced ifh = (a, b, str) -> System.out.println(a + b + " " + str);
         Inherfaced iheh = (str1, str2) -> System.out.println(str1 + " 777 " + str2);
-        Lambda3.method1(ifh);
-        Lambda3.method2(iheh);
+        Lambdas3.method1(ifh);
+        Lambdas3.method2(iheh);
         /**Або підставляти лямбду на льоту**/
-        Lambda3.method1((a, b, str) -> System.out.println("666"));
-        Lambda3.method2((Sstr1, str2) -> System.out.println("888"));
+        Lambdas3.method1((a, b, str) -> System.out.println("666"));
+        Lambdas3.method2((Sstr1, str2) -> System.out.println("888"));
 
     }
 }

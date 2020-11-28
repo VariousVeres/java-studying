@@ -1,7 +1,4 @@
 package examples;
-
-
-import org.joda.time.DateTimeZone;
 import org.junit.Test;
 
 
@@ -11,10 +8,9 @@ import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-import static java.time.LocalDateTime.*;
+/**Різні види часу та дати в Java - старий та новий**/
 
-
-public class DataTime {
+public class DateTime {
 
     @Test
     public void test() {
@@ -42,9 +38,6 @@ public class DataTime {
         String date = simpleDateFormatWithLocale.format(dateObject);
         System.out.println(date);
 
-
-
-
         /*Новий пакет - java.time - LocalDate, LocalTime, LocalDateTime - новіші формати які представлені для Java 8*/
         LocalDate localDateObj = LocalDate.now(); // Дата
         System.out.println(localDateObj + " - Local Date");
@@ -70,8 +63,6 @@ public class DataTime {
         System.out.println(localDateString2 + " - Formatted local date string2");
         System.out.println(localTimeString + " - Formatted local time string");
         System.out.println(localDateTimeString + " - Formatted local date time string");
-
-
     }
 
 }

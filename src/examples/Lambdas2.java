@@ -11,7 +11,7 @@ interface Inhisface {
     int method(int a, int b, String str);
 }
 
-public class Lambda2 {
+public class Lambdas2 {
     //Метод, який приймає реалізацію інтерфейсу, як параметр//
     //Ми тут ще не знаєм, що саме буде відбуватись в методі
     public static void methodTakesLambda(Inhisface ihf) {
@@ -25,9 +25,9 @@ public class Lambda2 {
             System.out.println(str + " - " + b / a + 324);
             return 3;
         };
-        Lambda2.methodTakesLambda(ihf);
+        Lambdas2.methodTakesLambda(ihf);
         //Або реальізовуєм інтерфейс на льоту пр ивиклиці методу//
-        Lambda2.methodTakesLambda((int a, int b, String str) -> {
+        Lambdas2.methodTakesLambda((int a, int b, String str) -> {
             System.out.println(str + " - " + b / a);
             return 0;
         });

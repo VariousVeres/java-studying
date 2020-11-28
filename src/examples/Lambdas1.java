@@ -31,7 +31,7 @@ class InyourfaceImpl2 implements Inyourface {
     }
 }
 
-public class Lambda1 {
+public class Lambdas1 {
     //Імплементуєм інтерфейс 1 через анонімний клас на льоту//
     Inyourface anonim = new Inyourface() {
         @Override

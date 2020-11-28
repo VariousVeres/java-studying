@@ -4,6 +4,8 @@ import org.junit.Test;
 
 import java.sql.*;
 
+/**Приклад найпростішого використання JDBC**/
+
 public class JDBC {
 
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";

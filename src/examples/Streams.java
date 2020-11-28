@@ -6,9 +6,13 @@ import java.util.*;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+/**
+ * CТРІМИ
+ **/
+
 public class Streams {
     @Test
-    public void test()  {
+    public void test() {
         /*Stream з ліста стрінгів*/
         List<String> list = Arrays.asList("OKI", "DOKI", "YO", "OPPOSUM", "MIST");
         list.stream().filter((a) -> a.startsWith("O"))

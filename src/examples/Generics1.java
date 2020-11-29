@@ -55,8 +55,22 @@ class Generic4<T extends Collection> {
         System.out.println(list);
     }
 }
+// 5)Дженеріки в інтерфейсі, схоже як в ф-ціональних інтерфейсах
+interface Generic5<T, S> {
+    T method(S s);
+}
 
 public class Generics1 {
+    //5) Приклад з сортуванням масиву, в параметрі інтерфейс, який поверне булін, якщо умова з Integer виконається
+    private void method(Generic5<Boolean, Integer> interf, int[] arr) {
+        List<Integer> list = new ArrayList<>();
+        for (int elem : arr) {
+            if (interf.method(elem)) {
+                list.add(elem);
+            }
+        }
+        System.out.println(list);
+    }
     @Test
     public void main() {
         // 1)Створюєм інстанс класу, при цьому визначаємо тип, який буде юзатись
@@ -85,7 +99,7 @@ public class Generics1 {
         gem5.getR();
         gem5.getT().method("Передали типу класу з дженеріком, як параметр іншого класу з дженерік типами");
 
-        //Тоді ми можем передати тільки тип який наслідує Collection
+        //4) Тоді ми можем передати тільки тип який наслідує Collection
         Generic4<List<String>> gem6 = new Generic4<>();
         gem6.listMethod(new ArrayList<>());
         Generic4 gem7 = new Generic4<>();
@@ -93,6 +107,11 @@ public class Generics1 {
         //gem7.listMethod(new HashMap<String,String>());
         //А сет можна, бо він наслідує Collection
         gem7.listMethod(new HashSet<String>());
+
+        //5) А в виклмці ми на льоту реалізовуєм цей інтерфейс і підставляєм будь- яку умову
+        method((s) -> s > 4, new int[]{3, 12, 46, 89, 4, 5, 6, 98, 4, 2, 23, 45});
+        method((s) -> s % 2 == 0, new int[]{3, 12, 46, 89, 4, 5, 6, 98, 4, 2, 23, 45});
+        method((s) -> s % 2 == 1, new int[]{3, 12, 46, 89, 4, 5, 6, 98, 4, 2, 23, 45});
     }
 }
 

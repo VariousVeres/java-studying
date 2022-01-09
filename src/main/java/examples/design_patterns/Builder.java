@@ -1,9 +1,9 @@
-package examples;
+package examples.design_patterns;
 
 import org.junit.Test;
 
 /**
- Приклад шаблону проектування Builder
+ * Приклад шаблону проектування Builder
  **/
 
 
@@ -11,9 +11,14 @@ class Car {                   //Клас потрібного нам інста�
     private String name;
     private int speed;
     private Trasmission trasmission;
+    private Modification modification;
 
     enum Trasmission {
         AUTO, MANUAL, COSMIC, DEFAULT
+    }
+
+    enum Modification {
+        SEDAN, HATCHBACK, CABRIO;
     }
 
     private Car(CarBuilder builder) {   //Всім полям інстансу будуть присвоєні значення полів інстансу класу-білдера
@@ -30,19 +35,25 @@ class Car {                   //Клас потрібного нам інста�
         private String name = "Default name";
         private int speed = 0;
         private Trasmission trasmission = Trasmission.DEFAULT;
+        private Modification modification = Modification.SEDAN;
 
-        CarBuilder buildName(String n) {     // Методи,які сетять поля класу і повертають його інстанс (щоб можна було чейнити)
+        CarBuilder setName(String n) {     // Методи,які сетять поля класу і повертають його інстанс (щоб можна було чейнити)
             this.name = n;
             return this;
         }
 
-        CarBuilder buildSpeed(int s) {
+        CarBuilder setSpeed(int s) {
             this.speed = s;
             return this;
         }
 
-        CarBuilder buildTransmission(Trasmission tr) {
+        CarBuilder sertTransmission(Trasmission tr) {
             this.trasmission = tr;
+            return this;
+        }
+
+        CarBuilder setModification(Modification m) {
+            this.modification = m;
             return this;
         }
 
@@ -55,9 +66,9 @@ class Car {                   //Клас потрібного нам інста�
 public class Builder {
     @Test
     public void test() {
-        Car car1 = new Car.CarBuilder().buildName("Alaba").buildSpeed(234).buildTransmission(Car.Trasmission.COSMIC).build();
+        Car car1 = new Car.CarBuilder().setName("Alaba").setSpeed(234).sertTransmission(Car.Trasmission.COSMIC).build();
         System.out.println(car1);
-        Car car2 = new Car.CarBuilder().buildName("Chery").buildSpeed(123).build();
+        Car car2 = new Car.CarBuilder().setName("Chery").setSpeed(123).build();
         System.out.println(car2);
         Car car3 = new Car.CarBuilder().build();
         System.out.println(car3);

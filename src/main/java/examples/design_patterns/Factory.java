@@ -2,7 +2,9 @@ package examples.design_patterns;
 
 import org.junit.Test;
 
-/**Інтрфейс загальний для фігури**/
+/**
+ * Інтрфейс загальний для фігури
+ **/
 interface Figure {
     void draw();
 
@@ -11,11 +13,21 @@ interface Figure {
     }
 }
 
-/**Класи, які імплементять**/
+/**
+ * Класи, які імплементять
+ **/
 class Square implements Figure {
+    int oneSide = 0;
+    int secondSide = 0;
+
+    Square(int x, int y) {
+        this.oneSide = x;
+        this.secondSide = y;
+    }
+
     @Override
     public void draw() {
-        System.out.println("I am square");
+        System.out.println("I am square with sides " + oneSide + " & " + secondSide + " accordingle");
     }
 }
 
@@ -33,20 +45,24 @@ class Round implements Figure {
     }
 }
 
-/**Клас, який має фабричний метод, який повертає інстанс того типу що треба**/
+/**
+ * Клас, який має фабричний метод, який повертає інстанс того типу що треба
+ **/
 class FigureFactory {
     public Figure createFigure(Figure.FigureType type) {
         if (type.equals(Figure.FigureType.ROUND)) {
             return new Round();
         } else if (type.equals(Figure.FigureType.SQUARE)) {
-            return new Square();
+            return new Square(3, 5);
         } else if (type.equals(Figure.FigureType.TRIANGLE)) {
             return new Triangle();
         } else return null;
     }
 }
 
-/**Хочем квадрат, хочем трикутник - нема проблем**/
+/**
+ * Хочем квадрат, хочем трикутник - нема проблем
+ **/
 public class Factory {
     @Test
     public void main() {

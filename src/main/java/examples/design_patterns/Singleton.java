@@ -21,7 +21,8 @@ class Example {
 public class Singleton {
     @Test
     public void main() {
-        Example.initializeClass().sayHi();
+        Example ex=Example.initializeClass();
+        ex.sayHi();
     }
 }
 

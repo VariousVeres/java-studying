@@ -1,4 +1,4 @@
-package training;
+package training.tries;
 
 import com.mysql.cj.x.protobuf.MysqlxCrud;
 import org.junit.Test;

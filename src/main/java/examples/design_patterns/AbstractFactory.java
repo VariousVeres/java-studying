@@ -30,8 +30,12 @@ class FootballShoes implements Equipment {
     }
 }
 
-class BasketballFactory extends FactoryAbstraction {
-    Equipment createEquipment(String type) {
+interface FactoryAbstraction {
+    Equipment createEquipment(String type);
+}
+
+class BasketballFactory implements FactoryAbstraction {
+    public Equipment createEquipment(String type) {
         if (type.equals("balls")) {
             return new BasketballBalls();
         } else if (type.equals("shoes")) {
@@ -40,18 +44,14 @@ class BasketballFactory extends FactoryAbstraction {
     }
 }
 
-class FootballFactory extends FactoryAbstraction {
-    Equipment createEquipment(String type) {
+class FootballFactory implements FactoryAbstraction {
+    public Equipment createEquipment(String type) {
         if (type.equals("balls")) {
             return new FootballBalls();
         } else if (type.equals("shoes")) {
             return new FootballShoes();
         } else return null;
     }
-}
-
-abstract class FactoryAbstraction {
-    abstract Equipment createEquipment(String type);
 }
 
 class FactoryProducer {

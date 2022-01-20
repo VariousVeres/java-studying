@@ -12,7 +12,7 @@ class SalesConsultant implements Employee {
     }
 }
 
-class Acountant implements Employee {
+class Accountant implements Employee {
     public void say() {
         System.out.println("I am Acountant");
     }
@@ -39,7 +39,7 @@ class OfficeFactory implements AbstractFactory {
         if (s.equals("SC")) {
             return new SalesConsultant();
         } else if (s.equals("AC")) {
-            return new Acountant();
+            return new Accountant();
         } else return null;
     }
 }

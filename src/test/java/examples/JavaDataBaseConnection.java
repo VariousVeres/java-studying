@@ -6,7 +6,7 @@ import java.sql.*;
 
 /**Приклад найпростішого використання JDBC**/
 
-public class JDBC {
+public class JavaDataBaseConnection {
 
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     static final String DATABASE_URL = "jdbc:mysql://localhost/test_db";

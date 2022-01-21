@@ -4,6 +4,7 @@ package examples.design_patterns;
 import org.junit.Test;
 
 /**Клас дірки в якій є метод, який визначає чи влізе фігура всередині по порівнянні радіусів**/
+/**Він працюватиме тільки з класами типу CirclePeg**/
 class Hole {
     Hole(int d) {
         this.radius = d;

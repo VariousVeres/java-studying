@@ -45,7 +45,7 @@ class SquarePeg {
     }
 }
 
-/**Адаптер, в якому ми загортаєм квадрат в круг і робим можливим використання квадртаної фігури як круглої*/
+/**Адаптер, в якому ми загортаєм квадрат в круг (CirclePeg) і робим можливим використання квадртаної фігури як круглої (getRadius())*/
 class SquarePegAdapterForCircleHole extends CirclePeg {
     private SquarePeg peg;
     public SquarePegAdapterForCircleHole(SquarePeg p) {

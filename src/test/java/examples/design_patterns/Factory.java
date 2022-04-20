@@ -17,8 +17,8 @@ interface Figure {
  * Класи, які імплементять
  **/
 class Square implements Figure {
-    int oneSide = 0;
-    int secondSide = 0;
+    private int oneSide = 0;
+    private int secondSide = 0;
 
     Square(int x, int y) {
         this.oneSide = x;
@@ -27,7 +27,7 @@ class Square implements Figure {
 
     @Override
     public void draw() {
-        System.out.println("I am square with sides " + oneSide + " & " + secondSide + " accordingle");
+        System.out.println("I am square with sides " + oneSide + " & " + secondSide + " accordingly");
     }
 }
 

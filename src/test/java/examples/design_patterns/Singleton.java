@@ -3,17 +3,23 @@ package examples.design_patterns;
 import org.junit.Test;
 
 class Example {
-    private Example() {
+    private String str;
+
+    private Example(String s) {
+        this.str = s;
     }
 
-    private final static Example INSTANCE = new Example();
+    private static Example instance;
 
-    public static Example initializeClass() {
-        return INSTANCE;
+    public static Example initializeClass(String s) {
+        if (instance == null) {
+            instance = new Example(s);
+        }
+        return instance;
     }
 
     public void sayHi() {
-        System.out.println("Say Hi!");
+        System.out.println("Say Hi! - " + str);
     }
 
 }
@@ -21,8 +27,11 @@ class Example {
 public class Singleton {
     @Test
     public void main() {
-        Example ex=Example.initializeClass();
-        ex.sayHi();
+        Example v = Example.initializeClass("Veres");
+        //Тут вже не створить новий інстанс бо є вже створений
+        Example p = Example.initializeClass("Petro");
+        v.sayHi();
+        p.sayHi();
     }
 }
 

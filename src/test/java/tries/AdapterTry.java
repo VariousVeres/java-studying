@@ -1,4 +1,4 @@
-package training.tries;
+package tries;
 import org.junit.Test;
 
 class Client {

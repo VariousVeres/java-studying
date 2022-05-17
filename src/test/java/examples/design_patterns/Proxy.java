@@ -2,53 +2,56 @@ package examples.design_patterns;
 
 import org.junit.Test;
 
+interface Image {
+    void display();
+}
+
+class RealImage implements Image {
+    private String fileName;
+
+    public RealImage(String fileName) {
+        this.fileName = fileName;
+        loadFromDisk(fileName);
+    }
+
+    @Override
+    public void display() {
+        System.out.println("Displaying " + fileName);
+    }
+
+    private void loadFromDisk(String fileName) {
+        System.out.println("Loading " + fileName);
+    }
+}
+
+class ProxyImage implements Image {
+
+    private RealImage realImage;
+    private String fileName;
+
+    public ProxyImage(String fileName) {
+        this.fileName = fileName;
+    }
+
+    @Override
+    public void display() {
+        if (realImage == null) {
+            realImage = new RealImage(fileName);
+        }
+        realImage.display();
+    }
+}
+
+
 public class Proxy {
     @Test
-    public void method() {
-        Player p1 = new ProxyMoviePlayer("Titanic.avi");
-        p1.play();
-        Player p2 = new ProxyMoviePlayer("It.avi");
-        p2.play();
-    }
-}
-
-
-interface Player {
-    void play();
-}
-
-class MoviePlayer implements Player {
-    String movieName;
-
-    MoviePlayer(String str) {
-        this.movieName = str;
-        System.out.println("Hi, it's movie player");
-        load();
+    public void main() {
+        Image image = new ProxyImage("test_10mb.jpg");
+        //Картинка буде завантажуватись вперше
+        image.display();
+        //А вдруге вже не буде
+        image.display();
     }
 
-    @Override
-    public void play() {
-        System.out.println("Play");
-    }
 
-    void load() {
-        System.out.println("Loading file " + this.movieName);
-    }
-}
-
-class ProxyMoviePlayer implements Player {
-    String movieName;
-    Player p;
-
-    ProxyMoviePlayer(String str) {
-        movieName = str;
-    }
-
-    @Override
-    public void play() {
-        if (p == null) {
-            p = new MoviePlayer(movieName);
-            p.play();
-        }
-    }
 }

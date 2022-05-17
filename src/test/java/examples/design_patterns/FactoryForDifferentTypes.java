@@ -83,6 +83,7 @@ public class FactoryForDifferentTypes {
     public void test() {
         FactoryProducer prod = new FactoryProducer();
         prod.returnFactory().createButton().paint();
+        prod.returnFactory().createCheckbox().paint();
 
     }
 

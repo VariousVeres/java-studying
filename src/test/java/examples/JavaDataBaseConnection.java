@@ -9,10 +9,10 @@ import java.sql.*;
 public class JavaDataBaseConnection {
 
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    static final String DATABASE_URL = "jdbc:mysql://localhost/test_db";
+    static final String DATABASE_URL = "jdbc:mysql://doo-staging8-db.crvi7fl8triw.eu-central-1.rds.amazonaws.com";
 
-    static final String USER = "root";
-    static final String PASSWORD = "azAZ09@-";
+    static final String USER = "ebroot";
+    static final String PASSWORD = "Ulapifobu231";
 
     @Test
     public void method() throws SQLException {
@@ -33,7 +33,7 @@ public class JavaDataBaseConnection {
         statement = connection.createStatement();
 
         String sql;
-        sql = "SELECT * FROM test_db.my_guests";
+        sql = "SELECT * FROM ebdb.event_attribute WHERE organizer_id = 13017";
 
         ResultSet resultSet = statement.executeQuery(sql);
 
@@ -42,15 +42,15 @@ public class JavaDataBaseConnection {
 
         while (resultSet.next()) {
             int id = resultSet.getInt("id");
-            String name = resultSet.getString("firstname");
-            String surname = resultSet.getString("lastname");
-            String email = resultSet.getString("email");
+            String templateId = resultSet.getString("template_id");
+            String type = resultSet.getString("type");
+            String name = resultSet.getString("name");
 
             System.out.println("\n================\n");
             System.out.println("id: " + id);
+            System.out.println("Template id: " + templateId);
+            System.out.println("Type: " + type);
             System.out.println("Name: " + name);
-            System.out.println("Specialty: " + surname);
-            System.out.println("Salary: $" + email);
 
             System.out.println("Closing connection and releasing resources...");
 

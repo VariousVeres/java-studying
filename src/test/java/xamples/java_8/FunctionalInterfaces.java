@@ -1,4 +1,4 @@
-package examples.java_8;
+package xamples.java_8;
 
 
 import org.junit.Test;

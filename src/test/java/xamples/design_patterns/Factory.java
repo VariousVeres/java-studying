@@ -1,4 +1,4 @@
-package examples.design_patterns;
+package xamples.design_patterns;
 
 import org.junit.Test;
 

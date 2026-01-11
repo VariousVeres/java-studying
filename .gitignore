@@ -2,3 +2,6 @@
 *.iml
 out
 target
+src/test/java/training
+src/test/java/training_package_other
+src/test/java/training_package_another

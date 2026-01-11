@@ -1,4 +1,4 @@
-package xamples;
+package xamples.java_8;
 
 import java.util.*;
 

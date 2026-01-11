@@ -1,4 +1,4 @@
-package xamples;
+package xamples.generics;
 
 import org.junit.Test;
 

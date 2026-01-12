@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Arrayz {
     @Test
@@ -60,6 +61,19 @@ public class Arrayz {
         //Сортує масив quick sort
         Arrays.sort(sumResultArray);
         System.out.println(Arrays.toString(sumResultArray));
+
+
+        //Максимальне значення масивву
+        int[] mice = new int[] { 4, 9, 3, 22, 5, 18, 25, 7, 11, 15, 5, 19 };
+
+
+        int max = mice[0];
+        for (int i=1;i<mice.length;i++)   {
+            if(mice[i]> max)  {
+                max = mice[i];
+            }
+        }
+        System.out.println("Макс - "+ max);
 
 
 

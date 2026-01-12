@@ -15,11 +15,17 @@ public class Collections {
         Collection<Integer> collection = new ArrayList<>();
         collection.add(48);
         collection.add(23);
+        collection.add(55);
         System.out.println(collection.toString());
 
         //Ітератор шоб проходитись по колекціям
         Iterator<Integer> iterator = collection.iterator();
-        int next = iterator.next();
+        while (iterator.hasNext())  {
+            System.out.println(iterator.next());
+        }
+
+
+
 
     }
 }

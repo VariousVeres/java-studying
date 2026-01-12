@@ -56,9 +56,15 @@ public class Strings {
         //Знаходимо по стрінзі який її індекс
         System.out.println(murzik.indexOf("зі"));
 
-
         String randomString = randomString(23);
         System.out.println(randomString);
+
+
+        //Проходимся по всім чарам в стрінзі
+        String base = "База для стрінги нашої укулеле";
+        for(int i=0;i< base.length();i++)  {
+            System.out.println(base.charAt(i));
+        }
 
 
     }

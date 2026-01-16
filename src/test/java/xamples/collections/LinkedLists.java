@@ -16,5 +16,12 @@ public class LinkedLists {
         linkedList.add("Мікі 17");
 
         System.out.println(linkedList);
+        //Вставляємо по індесу
+        linkedList.add(3, "Понтій Пилат");
+        System.out.println(linkedList);
+
+        linkedList.remove("Мікі 17");
+        System.out.println(linkedList);
+
     }
 }

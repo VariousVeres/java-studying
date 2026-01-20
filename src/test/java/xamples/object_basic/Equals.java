@@ -39,6 +39,7 @@ public class Equals {
         Sweater sweater2 = new Sweater();
         System.out.println(sweater1.equals(sweater2));
         System.out.println(sweater1 == sweater2);
+        //Різні хеші
         System.out.println(sweater1.hashCode() + " " + sweater2.hashCode() + "\n");
         //По замовчуванню в об'єкта тобто вони будуть порівнюватись по посиланню
         // public boolean equals(Object o) {

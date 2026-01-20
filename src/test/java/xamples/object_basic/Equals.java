@@ -8,6 +8,10 @@ class Hat {
 
     private String type;
 
+    void setType(String type) {
+        this.type = type;
+    }
+
 
     //Отак перевизначаєм equals щоб могти зрівнювати об'єкти Hat по полю type
     @Override
@@ -53,6 +57,12 @@ public class Equals {
 
         System.out.println(hat1 == hat2);
         System.out.println(hat1.equals(hat2));
+        System.out.println(hat1.hashCode() + " " + hat2.hashCode() + "\n");
+
+        //Змінили об'єкт - змінився хеш і все false
+        hat2.setType("Pullover");
+        System.out.println(hat1.equals(hat2));
+        System.out.println(hat1.hashCode() + " " + hat2.hashCode() + "\n");
 
 
     }

@@ -44,7 +44,7 @@ public class SimpleEqual {
         System.out.println(set1 == set2);
         System.out.println(set1.hashCode());
         System.out.println(set2.hashCode());
-        //А через equals true бо логічно вони рівні
+        //А через equals true бо логічно вони рівні бо HashSet працює по хешам і перевизначає hashCode()
         System.out.println(set1.equals(set2));
 
         //Буде true бо це посилання на один й той самий об'єкт

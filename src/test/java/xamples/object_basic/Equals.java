@@ -31,6 +31,7 @@ class Hat {
 
 class Sweater {
     private String type;
+
 }
 
 public class Equals {
@@ -38,13 +39,14 @@ public class Equals {
     public void test() {
 
 
-        //False false - різні об'єкти з різними хешами та посиланнями на них
+        //Об'єкти без пеервизначеного equals і хеш коду
         Sweater sweater1 = new Sweater();
         Sweater sweater2 = new Sweater();
-        System.out.println(sweater1.equals(sweater2));
-        System.out.println(sweater1 == sweater2);
+        //false бо equals не перевизначений і рівняє по референсам
+        System.out.println("Порівнюємо 2 однакові об'єкти без перевиз equals: " + sweater1.equals(sweater2));
+
         //Різні хеші
-        System.out.println(sweater1.hashCode() + " " + sweater2.hashCode() + "\n");
+        System.out.println("Ну і хеші будуть різні в них також: " + sweater1.hashCode() + " " + sweater2.hashCode() + "\n");
         //По замовчуванню в об'єкта тобто вони будуть порівнюватись по посиланню
         // public boolean equals(Object o) {
         //    return this == o;
@@ -55,9 +57,9 @@ public class Equals {
         Hat hat1 = new Hat();
         Hat hat2 = new Hat();
 
-        System.out.println(hat1 == hat2);
-        System.out.println(hat1.equals(hat2));
-        System.out.println(hat1.hashCode() + " " + hat2.hashCode() + "\n");
+        //true бо equals перевизначений і рівняє логічно
+        System.out.println("Порівнюємо 2 однакові об'єкти з перевизначеним equals: " + hat1.equals(hat2));
+        System.out.println("Хеші будуть однакові в них бо hashCode також перевизначили: "+ hat1.hashCode() + " " + hat2.hashCode() + "\n");
 
         //Змінили об'єкт - змінився хеш і все false
         hat2.setType("Pullover");

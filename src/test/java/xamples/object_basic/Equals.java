@@ -58,7 +58,8 @@ public class Equals {
 
         //true бо equals перевизначений і рівняє логічно
         System.out.println("Порівнюємо 2 однакові об'єкти з перевизначеним equals: " + hat1.equals(hat2));
-        System.out.println("Хеші будуть однакові в них бо hashCode також перевизначили: "+ hat1.hashCode() + " " + hat2.hashCode() + "\n");
+        System.out.println("Хеші будуть однакові в них бо hashCode також перевизначили: " + hat1.hashCode() + " " + hat2.hashCode() + "\n");
+        System.out.println("якщо б не перевизначили hashCode то хеші б були різні");
 
 
     }

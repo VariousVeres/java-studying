@@ -4,6 +4,11 @@ import org.junit.Test;
 
 class Human<L> {
     private L race;
+
+    public Human(L race) {
+        this.race=race;
+    }
+
     public void setRace(L race) {
         this.race = race;
     }
@@ -15,6 +20,12 @@ class Human<L> {
 //Якщо наслідуватись то дочірній клас не знає про інший по типу дженерік батьківського - треба вказувати
 class Person<G, L> extends Human<L> {
     private G id;
+
+    public Person (G id, L race)  {
+        super(race);
+        this.id=id;
+
+    }
     private String name;
     G getId() {
         return id;
@@ -25,10 +36,7 @@ class Person<G, L> extends Human<L> {
         System.out.println("Оце отаке " + addon);
         return id;
     }
-    Person(G id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+
 }
 
 public class GenericWithInheritance {
@@ -36,11 +44,14 @@ public class GenericWithInheritance {
     @Test
     public void test() {
         //Створюєм об'єкт з потрібними нами типами - <Boolean,Integer> обов'язково
-        Person<Boolean, Integer> person = new Person<>(true, "Name");
+        Person<Boolean, Integer> person = new Person<>(true, 33);
 
         person.setRace(34);
         System.out.println(person.getId());
         System.out.println(person.getRace());
+
+        //З додатковим параметром
+        System.out.println(person.getId(45.5f));
 
 
     }

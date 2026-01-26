@@ -10,16 +10,15 @@ import java.util.List;
  * Дженеріки складніші приклади
  **/
 
-public class GenericsWithList {
-    //1) Wildcards або метасимвольні аргументи, я хз нашо воно, але типу так ми можем передавати любі типи
-    static void printList(List <?> list) {
-        for (Object l : list)
+public class GenericsWithList<T> {
+
+    void printList(List<T> list) {
+        for (T l : list)
             System.out.println("{" + l + "}");
     }
 
-    //2) Метод, який примає ліст певного типу і змінну того ж
-    // Перше <T> - це визначає що ми юзаєм дженерік в методі, друге List<T> - визначає що ми повертаєм
-    private <T> List<T> addToListAllTypes(List<T> list, T t) {
+
+    private List<T> addToListAllTypes(List<T> list, T t) {
         list.add(t);
         System.out.println(list);
         return list;
@@ -27,19 +26,23 @@ public class GenericsWithList {
 
     @Test
     public void main() {
-        //1) Типу лісти з різними типами можем передавати сюди
+        GenericsWithList<String> gWL1 = new GenericsWithList<>();
+        GenericsWithList<Integer> gWL2 = new GenericsWithList<>();
+
         List<Integer> list1 = new ArrayList<>();
         list1.add(10);
-        printList(list1);
+        gWL2.printList(list1);
+
         List<String> list2 = new ArrayList<>();
         list2.add("10");
-        printList(list2);
+        gWL1.printList(list2);
 
-        //2) Але ми ітак можем передавати лісти різних типів
+
         List<String> list3 = new ArrayList<>();
+        gWL1.addToListAllTypes(list3, "asd");
+
         List<Integer> list4 = new ArrayList<>();
-        addToListAllTypes(list3, "asd");
-        addToListAllTypes(list4, 232);
+        gWL2.addToListAllTypes(list4, 232);
     }
 
 

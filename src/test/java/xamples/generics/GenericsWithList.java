@@ -10,7 +10,7 @@ import java.util.List;
  * Дженеріки складніші приклади
  **/
 
-public class Generics2 {
+public class GenericsWithList {
     //1) Wildcards або метасимвольні аргументи, я хз нашо воно, але типу так ми можем передавати любі типи
     static void printList(List <?> list) {
         for (Object l : list)

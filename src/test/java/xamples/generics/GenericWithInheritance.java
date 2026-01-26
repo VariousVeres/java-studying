@@ -31,7 +31,7 @@ class Person<G, L> extends Human<L> {
     }
 }
 
-public class Generics1 {
+public class GenericWithInheritance {
 
     @Test
     public void test() {

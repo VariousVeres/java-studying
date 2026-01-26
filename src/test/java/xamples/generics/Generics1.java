@@ -35,12 +35,10 @@ public class Generics1 {
 
     @Test
     public void test() {
-        //Може id передавати любий тип
-        var person = new Person<>(true, "Name");
-        //Так само сетати любий тип
+        //Створюєм об'єкт з потрібними нами типами - <Boolean,Integer> обов'язково
+        Person<Boolean, Integer> person = new Person<>(true, "Name");
+
         person.setRace(34);
-        person.setRace(3.09f);
-        person.setRace("Caucasian");
         System.out.println(person.getId());
         System.out.println(person.getRace());
 

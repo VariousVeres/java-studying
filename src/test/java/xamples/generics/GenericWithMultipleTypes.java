@@ -30,7 +30,7 @@ public class GenericWithMultipleTypes {
         cl1.setType("Zone");
         cl1.setZone(23);
         //Ставим типи які нам треба
-        Client<Boolean, Float> cl2 = new Client();
+        Client<Boolean, Float> cl2 = new Client<>();
         cl2.setZone(34.5f);
         cl2.setType(false);
     }

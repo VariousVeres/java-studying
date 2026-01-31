@@ -1,6 +1,6 @@
 package xamples.interfaces;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 interface ParentInterface {
 

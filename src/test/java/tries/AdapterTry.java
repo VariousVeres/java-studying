@@ -1,5 +1,5 @@
 package tries;
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 class Client {
     void catSays(Cat c) { c.meow();}

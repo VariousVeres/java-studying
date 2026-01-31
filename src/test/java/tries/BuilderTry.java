@@ -1,6 +1,6 @@
 package tries;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 class Order {
     private String firstName, lastName, email;

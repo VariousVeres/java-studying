@@ -1,6 +1,6 @@
 package xamples.abstract_classes;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 abstract class AbstractParent {
     private String name;

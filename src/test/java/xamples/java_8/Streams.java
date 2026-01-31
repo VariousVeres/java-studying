@@ -1,6 +1,6 @@
 package xamples.java_8;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import java.util.*;
 import java.util.stream.IntStream;

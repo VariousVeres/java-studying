@@ -1,7 +1,7 @@
 package xamples.design_patterns;
 
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 class Singel {
 

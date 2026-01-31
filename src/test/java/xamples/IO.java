@@ -1,6 +1,6 @@
 package xamples;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;

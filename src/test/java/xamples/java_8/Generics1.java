@@ -2,7 +2,7 @@ package xamples.java_8;
 
 import java.util.*;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 /**
  * ДЖЕНЕРІКИ

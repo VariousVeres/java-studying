@@ -1,6 +1,6 @@
 package xamples.exceptions;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 
 class Croco {

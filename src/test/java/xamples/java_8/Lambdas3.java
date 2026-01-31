@@ -1,6 +1,6 @@
 package xamples.java_8;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 /**
  * ПОСИЛАННЯ НА МЕТОД (ЗАМІСТЬ ЛЯМБДИ) ЯК ПАРАМЕТР МЕТОДУ

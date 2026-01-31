@@ -2,7 +2,7 @@ package xamples.date_time;
 
 
 import org.joda.time.DateTime;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import org.joda.time.LocalDateTime;
 import org.joda.time.LocalDate;
 import org.joda.time.LocalTime;

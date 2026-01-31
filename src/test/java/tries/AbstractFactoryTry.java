@@ -1,6 +1,6 @@
 package tries;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 interface Employee {
     void say();

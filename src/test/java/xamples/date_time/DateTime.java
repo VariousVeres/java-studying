@@ -1,5 +1,5 @@
 package xamples.date_time;
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 
 import java.text.DateFormat;

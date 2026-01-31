@@ -1,7 +1,7 @@
 package xamples.design_patterns;
 
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 /**
  * Клас дірки в якій є метод, який визначає чи влізе фігура всередині по порівнянні радіусів

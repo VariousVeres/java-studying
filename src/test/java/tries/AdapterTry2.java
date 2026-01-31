@@ -1,6 +1,6 @@
 package tries;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 class Program {
     public void takeNeededTypeAndDoSmthing(NeededType type) {

@@ -1,4 +1,4 @@
-package xamples.object_comparing;
+package xamples.java_core.object_comparing;
 
 import org.testng.annotations.Test;
 

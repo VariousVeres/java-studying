@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import java.util.Arrays;
 import java.util.Random;
 
-public class Strings {
+public class StringsBasics {
 
     String upperFluffer = "FLUFFER";
 

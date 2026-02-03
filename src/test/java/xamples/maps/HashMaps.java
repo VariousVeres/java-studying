@@ -30,14 +30,26 @@ public class HashMaps {
 
     @Test
     public void main() {
-        Map<User, String> map = new HashMap<>();
+        Map<User, String> userStringMap = new HashMap<>();
         User u = new User("a@mail.com");
-        map.put(u, "value");
+        userStringMap.put(u, "value");
 
         // Мутація ключа
         u.email = "b@mail.com";
+        //Буде null бо об'єкт мутував і хеш змінився
+        System.out.println(userStringMap.get(u));
 
-        System.out.println(map.get(u));
+        Map<String, Integer> map = new HashMap<>();
+        map.put("Рембо", 2);
+        map.put("Термінатор", 3);
+        map.put("Джон Вік", 4);
+
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            String key = entry.getKey();
+            Integer value = entry.getValue();
+            System.out.println(key);
+            System.out.println(value);
+        }
 
     }
 }

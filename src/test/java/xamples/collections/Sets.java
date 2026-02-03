@@ -33,7 +33,7 @@ public class Sets {
         countryHashSet.add("Україна");
         countryHashSet.add("Франція");
         countryHashSet.add("Гондурас");
-        countryHashSet.add("Кот-Д'Івуар"); // любимая страна всех котов
+        countryHashSet.add("Кот-Д'Івуар");
 
         System.out.println(("Розмір HashSet = " + countryHashSet.size()));
         System.out.println(countryHashSet);
@@ -41,6 +41,14 @@ public class Sets {
         boolean ukraineDuplicated = countryHashSet.add("Україна");
         System.out.println(ukraineDuplicated);
         System.out.println(countryHashSet);
+
+        //Сет ітеруєтсья або фор ічом або ітератором або стрімом
+        System.out.println("-----ІТЕРУЄМО СЕТ------");
+        Iterator<String> it = countryHashSet.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
+
 
 
         Random random = new Random(30);

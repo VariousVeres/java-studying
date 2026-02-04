@@ -26,12 +26,13 @@ class User {
     }
 }
 
-public class HashSets {
+public class HashSetsBroke {
     @Test
     public void test() {
         User user = new User("Aloka");
         Set<User> userSet = new HashSet<>();
         userSet.add(user);
+        //Мутуємо об'єкт
         user.email="Bicep";
         System.out.println(userSet.contains(user)); //  false
         System.out.println(userSet.remove(user));   //  false

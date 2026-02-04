@@ -3,6 +3,7 @@ package xamples.streams;
 import org.junit.Test;
 
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -35,6 +36,15 @@ public class StreamsBasics {
         listInt.stream().sorted().
                 forEach(a -> System.out.println(a));
 
+        /*Посортували*/
+        System.out.println("------Посортований стрім через Comparator по довжині строки--------");
+        List<String> fellowship = Arrays.asList("Gendalf", "Frodo", "Arven", "Golum", "Saruman", "Aragorn", "Legolas","Azoh");
+        Comparator<String> comparator = (el1, el2) -> el1.length() - el2.length();
+
+        List<String> fellowshipSorted = fellowship.stream().sorted(comparator).collect(Collectors.toList());
+        System.out.println(fellowshipSorted);
+
+
 
         /*Виведе в консоль, якщо буде присутня тільки термінальна операція*/
         System.out.println("------Виведе в консоль, якщо буде присутня тільки термінальна операція--------");
@@ -55,7 +65,7 @@ public class StreamsBasics {
         /*Знаходим чи всі елементи починаються на А*/
         System.out.println("------Якщо всі елементи співпадуть умові то true--------");
         boolean b = lsrt.stream().allMatch(a -> a.startsWith("A")); //Якщо хоч щось співпаде
-        System.out.println("СПІВПАЛО? - " +b);
+        System.out.println("СПІВПАЛО? - " + b);
 
 
 //        /*Фільтрація filter*/

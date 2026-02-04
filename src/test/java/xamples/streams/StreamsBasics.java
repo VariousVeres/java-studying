@@ -1,4 +1,4 @@
-package xamples.java_8;
+package xamples.streams;
 
 import org.junit.Test;
 
@@ -10,7 +10,7 @@ import java.util.stream.Stream;
  * CТРІМИ
  **/
 
-public class Streams {
+public class StreamsBasics {
     @Test
     public void test() {
         /*Stream з ліста стрінгів*/
@@ -50,7 +50,7 @@ public class Streams {
         List<String> lsrt = new ArrayList<>();
         Collections.addAll(lsrt, "AF", "AB", "AG", "BA", "BF");
         Optional<String> first = lsrt.stream().findFirst();
-        System.out.println("FIRST: " + first);
+        System.out.println("FIRST: " + first.orElseGet(() -> "DEFAULT"));
 
         /*Знаходим чи всі елементи починаються на А*/
         System.out.println("------Якщо всі елементи співпадуть умові то true--------");

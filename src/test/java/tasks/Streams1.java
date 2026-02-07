@@ -1,4 +1,4 @@
-package xamples.streams;
+package tasks;
 
 import org.testng.annotations.Test;
 
@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
  * збери в Set і знайди, чи є там хоч один елемент, що містить слово "error" - зроби сет без нього та відсортуй. Це класичний ланцюжок методів, який постійно потрібен у тестах.
  **/
 
-public class StreamsPractice {
+public class Streams1 {
 
     Comparator<String> comparator = (o1, o2) -> o1.length() - o2.length();
 

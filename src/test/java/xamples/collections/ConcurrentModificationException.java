@@ -44,8 +44,20 @@ public class ConcurrentModificationException {
 //            list.remove(str);
 //        }
 
-        for (String str: list)  {
-            list.add("Кубло");
+//        for (String str: list)  {
+//            list.add("Кубло");
+//        }
+
+        LinkedHashMap<String, String> linkedHashMap = new LinkedHashMap<>();
+        linkedHashMap.put("Європа", "Амстердам");
+        linkedHashMap.put("Азія", "Улан-Батор");
+        linkedHashMap.put("Австралія", "Канбера");
+
+        /**ConcurrentModificationException в мапі через foreach та remove **/
+        Iterator<Map.Entry<String, String>> it = linkedHashMap.entrySet().iterator();
+        while (it.hasNext()) {
+            //Remove в мапі працює по ключу
+            linkedHashMap.remove(it.next().getKey());
         }
 
 

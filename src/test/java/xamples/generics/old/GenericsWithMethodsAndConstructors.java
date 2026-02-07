@@ -1,4 +1,4 @@
-package xamples.generics;
+package xamples.generics.old;
 
 import org.testng.annotations.Test;
 

@@ -1,4 +1,4 @@
-package tasks;
+package tasks.streams;
 
 import org.testng.annotations.Test;
 

@@ -15,15 +15,16 @@ public class ConcurrentModificationException {
 //        /**ConcurrentModificationException через iterator та remove **/
 //        Iterator<Integer> it1 = intSet.iterator();
 //        while (it1.hasNext()) {
-//            Integer c = it1.next();
-//            intSet.remove(c); // 💥 ConcurrentModificationException
+//            intSet.remove(23);
+//            it1.next();// 💥 ConcurrentModificationException
 //        }
-//
+
 //        /**ConcurrentModificationException через iterator та add **/
 //        Iterator<Integer> it2 = intSet.iterator();
 //        while (it2.hasNext()) {
-//            it2.next();
+//
 //            intSet.add(111); // 💥 ConcurrentModificationException
+//            it2.next();
 //        }
 
         List<String> list = new ArrayList<>();
@@ -38,9 +39,13 @@ public class ConcurrentModificationException {
 //            String i = it3.next();
 //            list.remove(i);
 //        }
-        /**ConcurrentModificationException через foreach та add **/
+//        /**ConcurrentModificationException через foreach та add **/
+//        for (String str: list)  {
+//            list.remove(str);
+//        }
+
         for (String str: list)  {
-            list.remove(str);
+            list.add("Кубло");
         }
 
 

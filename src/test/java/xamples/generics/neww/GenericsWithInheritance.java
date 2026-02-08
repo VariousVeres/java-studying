@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-class Gen<T, K> {
+class Gen<T extends Number, K> {
     private T type;
     private K key;
     private boolean isMatch;
@@ -33,14 +33,14 @@ class Gen<T, K> {
 
 }
 
-class GenChild<T,K> extends Gen<T, K>{
+class GenChild<T extends Integer ,K> extends Gen<T, K>{
     public GenChild(T t, boolean b, K k) {
         super(t, b);
         super.setKey(k);
     }
 }
 
-class GenGrandChild<T,K, S> extends GenChild<T,K>{
+class GenGrandChild<T extends Integer,K, S> extends GenChild<T,K>{
     S style;
     public GenGrandChild(T t, boolean b, K k, S s) {
         super(t, b, k);
@@ -51,14 +51,22 @@ class GenGrandChild<T,K, S> extends GenChild<T,K>{
 public class GenericsWithInheritance {
     @Test
     public void test() {
-        Gen<String, List<String>> stringGen = new Gen<>("Gen string", true);
+        //Тут перший параметр типу T має бути extends Number, другий boolean, але ще є тип K який ми в даймонді кажем який саме - List<String>
+        Gen<Long, List<String>> stringGen = new Gen<>(123L, true);
         stringGen.setKey(new ArrayList<>());
-        Gen<Boolean, int[]> booleanGen = new Gen<>(false, true);
+        //Тут перший параметр типу T має бути extends Number, другий boolean, але ще є тип K який ми в даймонді кажем який саме - int[]
+        Gen<Integer, int[]> booleanGen = new Gen<>(22, true);
         booleanGen.setKey(new int[4]);
-        GenChild<Double, Integer> genChild1 = new GenChild<>(23.2d, true, 234);
-        GenChild<String, Integer> genChild2 = new GenChild<>("Gen child string", true, 234);
 
-        GenGrandChild<String, List<String>, Double> genGrandChild
-                = new GenGrandChild<>("Grandchild string", true,new ArrayList<>(), 34.2d);
+        //Тут перший параметр типу T має бути extends Integer, другий boolean, третій типу K ми кажем що String
+        GenChild<Integer, String> genChild1 = new GenChild<>(23, true, "kkk");
+
+        //Тут перший параметр має бути extends Integer, другий boolean, третій типу K ми кажем що boolean[]
+        GenChild<Integer, boolean[]> genChild2 = new GenChild<>(33, true, new boolean[2]);
+
+
+        GenGrandChild<Integer, List<String>, Double> genGrandChild
+                //ут перший параметр має бути extends Integer, другий boolean, третій типу K ми кажем що List<String>, четвертий типу S ми кажемо що Double
+                = new GenGrandChild<>(33, true,new ArrayList<>(), 34.2d);
     }
 }

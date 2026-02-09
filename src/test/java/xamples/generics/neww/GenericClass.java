@@ -42,6 +42,9 @@ public class GenericClass {
         // і буде просто Object і потім кастити треба
         Box rawBox = new Box<>("Raw");
        String s = (String) rawBox.getT();
+       //Отак без типу ми засетати даже можем шо хоч але потім отримуємо ClassCastException
+       rawBox.setT(123);
+//       String str = (String) rawBox.getT();
 
         //Отак не заканає вже точно через різні типи
 //        Box<Long> b3 = new Box<>(new Integer(3));

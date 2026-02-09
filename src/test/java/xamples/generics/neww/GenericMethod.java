@@ -15,7 +15,7 @@ class Cat extends Animal {
 class Car {
 }
 
-public class GenericMethod {
+public class GenericMethod{
     //Метод який оперує типом <Т> без bounds та повертає саме той тип T який ми передаєм в нього
 
     <T> T identity(T value) {

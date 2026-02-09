@@ -15,7 +15,7 @@ class Game<T extends Temporal, E extends RuntimeException>  {
     }
 }
 
-public class GenericBoundingClass{
+public class GenericBoundedClass {
 
     @Test
     public void test()  {

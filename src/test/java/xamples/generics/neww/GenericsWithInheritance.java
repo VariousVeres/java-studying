@@ -32,7 +32,7 @@ class Gen<T extends Number, K> {
     }
 
 }
-
+//Звужуєм bound до Integer
 class GenChild<T extends Integer ,K> extends Gen<T, K>{
     public GenChild(T t, boolean b, K k) {
         super(t, b);

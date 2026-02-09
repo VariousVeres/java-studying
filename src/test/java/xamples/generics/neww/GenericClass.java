@@ -38,6 +38,11 @@ public class GenericClass {
         Box<Boolean> b2 = new Box<>(true);
         b2.say();
 
+        //Якщо отак будем створювати без типу то це втрачається прив'язка до типу
+        // і буде просто Object і потім кастити треба
+        Box rawBox = new Box<>("Raw");
+       String s = (String) rawBox.getT();
+
         //Отак не заканає вже точно через різні типи
 //        Box<Long> b3 = new Box<>(new Integer(3));
 

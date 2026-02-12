@@ -44,12 +44,16 @@ public class HashMaps {
         map.put("Термінатор", 3);
         map.put("Джон Вік", 4);
 
+        System.out.println("-------ПЕРЕБИРАЄМ МАПУ ФОР ІЧОМ-------");
+
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
             String key = entry.getKey();
             Integer value = entry.getValue();
             System.out.println(key);
             System.out.println(value);
         }
+
+
 
     }
 }

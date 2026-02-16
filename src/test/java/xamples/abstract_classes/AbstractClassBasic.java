@@ -35,14 +35,14 @@ class ChildOfAbstract extends AbstractParent {
         super(name, age);
     }
 
-    //Реалізація анонімного методу (Без цього не створиться клас)
+    //Реалізація абстрактного методу (Без цього не створиться клас)
     @Override
     public void sayAge() {
         System.out.println("My age is " + getAge());
     }
 }
 
-public class AbstractClass {
+public class AbstractClassBasic {
 
     @Test
     public void test() {

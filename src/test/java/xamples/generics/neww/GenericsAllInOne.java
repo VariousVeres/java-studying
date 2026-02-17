@@ -36,7 +36,7 @@ class Seclusion {
 
     // List<T>
     public static <T> void listMeth(List<T> list,T t)  {
-        list.add(t);
+        list.add(t); //Можем додати бо при виклику будем знати типу
         System.out.println(list.get(0));
         System.out.println(list);
     }
@@ -53,7 +53,7 @@ class Seclusion {
     //Тут продукуємо значення потомків Number
     public static void listMeth(List<? extends Number> list)  {
         System.out.println(list.get(0));
-//        list.add(34); - Не канає а вдруг буде Float
+//        list.add(34); - Не канає бо знаємо що типу наслідуєтсья від Number, а вдруг буде Float
         System.out.println(list);
     }
 

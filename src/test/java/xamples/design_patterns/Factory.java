@@ -49,7 +49,7 @@ class Round implements Figure {
  * Клас, який має фабричний метод, який повертає інстанс того типу що треба
  **/
 class FigureFactory {
-    public Figure createFigure(Figure.FigureType type) {
+    public static Figure createFigure(Figure.FigureType type) {
         if (type.equals(Figure.FigureType.ROUND)) {
             return new Round();
         } else if (type.equals(Figure.FigureType.SQUARE)) {
@@ -66,9 +66,9 @@ class FigureFactory {
 public class Factory {
     @Test
     public void main() {
-        FigureFactory creation = new FigureFactory();
-        Figure round = creation.createFigure(Figure.FigureType.ROUND);
-        Figure square = creation.createFigure(Figure.FigureType.SQUARE);
+
+        Figure round = FigureFactory.createFigure(Figure.FigureType.ROUND);
+        Figure square = FigureFactory.createFigure(Figure.FigureType.SQUARE);
         round.draw();
         square.draw();
     }

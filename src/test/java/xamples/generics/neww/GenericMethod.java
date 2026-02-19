@@ -15,7 +15,7 @@ class Cat extends Animal {
 class Car {
 }
 
-public class GenericMethod {
+public class GenericMethod{
     //Метод який оперує типом <Т> без bounds та повертає саме той тип T який ми передаєм в нього
 
     <T> T identity(T value) {
@@ -23,9 +23,7 @@ public class GenericMethod {
         return value;
     }
 
-    Object identityObj(Object o) {
-        return o;
-    }
+
 
     @Test
     public void test() {
@@ -34,7 +32,7 @@ public class GenericMethod {
         String s = identity("hello");
         Car car = identity(new Car());
 
-        Dog dog1 = (Dog) identityObj(new Dog());
+
 //  ❌ Це НЕ має працювати:
 //        int x = identity("hello");
 

@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.Optional;
 
-class DriverFactory {
+class ZhlobFactory {
     public static WebDriver getDriver()  {
         //Якщо оформлене просто як хелпер статичний то це дуже сімпл фекторі
        String browser = Optional.ofNullable(System.getProperty("driver")).orElse("chrome");
@@ -23,7 +23,7 @@ class DriverFactory {
 public class SimpleFactoryForWebDriver {
     @Test
     public void test()  {
-        WebDriver driver = DriverFactory.getDriver();
+        WebDriver driver = ZhlobFactory.getDriver();
         driver.quit();
     }
 }

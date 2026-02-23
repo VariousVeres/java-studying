@@ -1,5 +1,7 @@
-package inside_project;
+package inside_project.tests;
 
+import inside_project.DriverFactoryTemplateMethod;
+import inside_project.pages.DooLoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;

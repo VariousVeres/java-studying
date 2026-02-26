@@ -12,7 +12,7 @@ public class BaseTest {
     public void setDriver() {
         driver.set(DriverFactoryTemplateMethod.manageDriver("chrome"));
         getDriver().manage().window().maximize();
-        getDriver().navigate().to(System.getProperty("base_url"));
+        getDriver().navigate().to(System.getProperty("base_url")+ "/account/login");
     }
 
     public WebDriver getDriver() {

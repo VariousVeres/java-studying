@@ -1,4 +1,4 @@
-package xamples.design_patterns;
+package xamples.design_patterns.neww;
 
 
 import org.testng.annotations.Test;

@@ -1,5 +1,6 @@
 package inside_project.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -8,12 +9,16 @@ import java.time.Duration;
 
 public class BasePage {
 
-    WebDriver webDriver;
+    WebDriver driver;
     protected WebDriverWait wait;
 
     protected BasePage(WebDriver driver) {
-        webDriver = driver;
-        wait = new WebDriverWait(webDriver, Duration.ofSeconds(5));
+        this.driver = driver;
+        wait = new WebDriverWait(this.driver, Duration.ofSeconds(5));
+    }
+
+    public boolean isElementPresent(By element)  {
+        return driver.findElement(element).isDisplayed();
     }
 
 
